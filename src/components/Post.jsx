@@ -1,18 +1,23 @@
+import { Avatar } from './Avatar'
+import { Comment } from './Comment'
 import styles from './Post.module.css'
 
-export function Post() {
+export function Post(props) {
     return (
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <img className={styles.avatar} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz4WOVGbHZuy0mm0dH05QhngzjqWNQOm7mmw&s" />
+                    <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz4WOVGbHZuy0mm0dH05QhngzjqWNQOm7mmw&s" />
                     <div className={styles.authorInfo}>
                         <strong> Renatinho </strong>
                         <span> Developer </span>
                     </div>
                 </div>
 
-                <time title="3 de setembro às 14:39h" dateTime="2025-09-03">Publicado há 1h</time>
+                <time 
+                    title="3 de setembro às 14:39h" 
+                    dateTime="2025-09-03">Publicado há 1h
+                </time>
             </header>
 
             <div className={styles.content}>
@@ -32,6 +37,12 @@ export function Post() {
                     <button type="submit">Publicar</button>
                 </footer>         
             </form>
+
+            <div className={styles.commentList}>
+                <Comment />
+                <Comment />
+                <Comment />
+            </div>
         </article>
     )
 }
